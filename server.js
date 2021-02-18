@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json({ extended: false}));
 
 // initial data
-const todos =[
+const web_projects =[
     {
         id: "1",
         title:"React Game!",
@@ -24,7 +24,7 @@ const todos =[
 ]
 //gets data
 app.get("/", (req,res) => {
-    res.status(200).json(todos);
+    res.status(200).json(web_projects);
 });
 //add data
 app.post("/", (req,res)=> {
@@ -32,8 +32,8 @@ app.post("/", (req,res)=> {
         title:req.body.title,
         id:uuidv4()
     }
-    todos.push(newTodo)
-    res.status(201).json(todos)
+    web_projects.push(newTodo)
+    res.status(201).json(web_projects)
 })
 
 const PORT = 8080
@@ -41,3 +41,6 @@ app.listen(PORT, ()=> {
     console.log(`server running on port: ${PORT}`)
 
 })
+
+
+
